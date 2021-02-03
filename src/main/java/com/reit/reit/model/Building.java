@@ -1,15 +1,17 @@
 package com.reit.reit.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.List;
 
 @Entity
+@Data
 @Table(name = "building")
 public class Building implements Serializable {
 
@@ -23,60 +25,43 @@ public class Building implements Serializable {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
-    @OneToMany(mappedBy = "building")
-    private List<Activity> activitiesList;
+    @Column(name = "active")
+    private boolean active;
 
-    private Boolean isActive;
-    @JsonIgnore
+    @CreatedDate
+    @Column(name = "created_at", nullable = false, length = 19)
     private Timestamp createdAt;
-    @JsonIgnore
+    @LastModifiedDate
+    @Column(name = "updated_at", nullable = false, length = 19)
     private Timestamp updatedAt;
 
-    public Long getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "Datatype [id=" + id + ", name=" + name + "]";
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Building other = (Building) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Activity> getActivitiesList() {
-        return activitiesList;
-    }
-
-    public void setActivitiesList(List<Activity> activitiesList) {
-        this.activitiesList = activitiesList;
-    }
-
-    @Column(name = "is_active")
-    public Boolean getIsActive() {
-        return this.isActive;
-    }
-
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
-    }
-
-    @Column(name = "created_at")
-    public Timestamp getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @Column(name = "updated_at")
-    public Timestamp getUpdatedAt() {
-        return this.updatedAt;
-    }
-
 }

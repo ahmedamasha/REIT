@@ -2,8 +2,8 @@ package com.reit.reit.rest;
 
 import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
-import com.reit.reit.model.Building;
-import com.reit.reit.service.BuildingService;
+import com.reit.reit.model.User;
+import com.reit.reit.service.UserService;
 import com.sun.istack.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,24 +16,23 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/building")
+@RequestMapping("api/user")
 @Validated
 @Slf4j
 public class UserController {
     @Autowired
-    private BuildingService buildingService;
+    private UserService userService;
 
     private final int ROW_PER_PAGE = 5;
 
     @PostMapping
-    public Building add(@RequestBody @Valid @NotNull Building building) throws BadResourceException, ResourceAlreadyExistsException {
-        return buildingService.save(building);
+    public User add(@RequestBody @Valid @NotNull User user) throws BadResourceException, ResourceAlreadyExistsException {
+        return userService.save(user);
     }
 
-
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Building>> findAll(
+    public ResponseEntity<List<User>> findAll(
             @RequestParam(value = "page", defaultValue = "1") int pageNumber) {
-        return ResponseEntity.ok(buildingService.findAll(pageNumber, ROW_PER_PAGE));
+        return ResponseEntity.ok(userService.findAll(pageNumber, ROW_PER_PAGE));
     }
 }

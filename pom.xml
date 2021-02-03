@@ -15,6 +15,7 @@
     <description>Equitativa assignment</description>
     <properties>
         <java.version>15</java.version>
+        <springdoc.version>1.2.29</springdoc.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,6 +38,24 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.classgraph</groupId>
+                    <artifactId>classgraph</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>4.8.60</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

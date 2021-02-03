@@ -3,9 +3,9 @@ package com.reit.reit.service.impl;
 import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
 import com.reit.reit.exception.ResourceNotFoundException;
-import com.reit.reit.model.Building;
-import com.reit.reit.respositry.BuildingRepository;
-import com.reit.reit.service.BuildingService;
+import com.reit.reit.model.Activity;
+import com.reit.reit.respositry.ActivityRepository;
+import com.reit.reit.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -15,40 +15,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ActivityServiceImpl implements BuildingService {
+public class ActivityServiceImpl implements ActivityService {
 
     @Autowired
-    public BuildingRepository buildingRepository;
+    public ActivityRepository activityRepository;
 
-    public List<Building> findAll(Integer pageNumber, Integer rowPerPage) {
-        List<Building> buildings = new ArrayList<>();
-        buildingRepository.findAll(PageRequest.of(pageNumber - 1, rowPerPage)).forEach(buildings::add);
-        return buildings;
+    public List<Activity> findAll(Integer pageNumber, Integer rowPerPage) {
+        List<Activity> activity = new ArrayList<>();
+        activityRepository.findAll(PageRequest.of(pageNumber - 1, rowPerPage)).forEach(activity::add);
+        return activity;
     }
 
-    public Building findById(Long id) throws ResourceNotFoundException {
-        Building building = buildingRepository.findById(id).orElse(null);
-        if (building==null) {
-            throw new ResourceNotFoundException("Cannot find Building with id: " + id);
-        }
-        else return building;
+    public Activity findById(Long id) throws ResourceNotFoundException {
+        Activity activity = activityRepository.findById(id).orElse(null);
+        if (activity == null) {
+            throw new ResourceNotFoundException("Cannot find activity with id: " + id);
+        } else return activity;
     }
 
     private boolean existsById(Long id) {
-        return buildingRepository.existsById(id);
+        return activityRepository.existsById(id);
     }
 
-    public Building save(Building building) throws BadResourceException, ResourceAlreadyExistsException {
-        if (!StringUtils.isEmpty(building.getName())) {
-            if (building.getId() != null && existsById(building.getId())) {
-                throw new ResourceAlreadyExistsException("Building with id: " + building.getId() +
+    public Activity save(Activity activity) throws BadResourceException, ResourceAlreadyExistsException {
+        if (!StringUtils.isEmpty(activity.getActivityName())) {
+            if (activity.getId() != null && existsById(activity.getId())) {
+                throw new ResourceAlreadyExistsException("activity with id: " + activity.getId() +
                         " already exists");
             }
-            return buildingRepository.save(building);
-        }
-        else {
+            return activityRepository.save(activity);
+        } else {
             BadResourceException exc = new BadResourceException("Failed to save buildings");
-            exc.addErrorMessage("buildings is null or empty");
+            exc.addErrorMessage("activity is null or empty");
             throw exc;
         }
     }

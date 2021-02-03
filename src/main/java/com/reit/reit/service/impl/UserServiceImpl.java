@@ -4,8 +4,11 @@ import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
 import com.reit.reit.exception.ResourceNotFoundException;
 import com.reit.reit.model.Building;
+import com.reit.reit.model.User;
 import com.reit.reit.respositry.BuildingRepository;
+import com.reit.reit.respositry.UserRepository;
 import com.reit.reit.service.BuildingService;
+import com.reit.reit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -15,36 +18,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements BuildingService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    public BuildingRepository buildingRepository;
+    public UserRepository userRepository;
 
-    public List<Building> findAll(Integer pageNumber, Integer rowPerPage) {
-        List<Building> buildings = new ArrayList<>();
-        buildingRepository.findAll(PageRequest.of(pageNumber - 1, rowPerPage)).forEach(buildings::add);
-        return buildings;
+    public List<User> findAll(Integer pageNumber, Integer rowPerPage) {
+        List<User> user = new ArrayList<>();
+        userRepository.findAll(PageRequest.of(pageNumber - 1, rowPerPage)).forEach(user::add);
+        return user;
     }
 
-    public Building findById(Long id) throws ResourceNotFoundException {
-        Building building = buildingRepository.findById(id).orElse(null);
-        if (building==null) {
+    public User findById(Long id) throws ResourceNotFoundException {
+        User user = userRepository.findById(id).orElse(null);
+        if (user==null) {
             throw new ResourceNotFoundException("Cannot find Building with id: " + id);
         }
-        else return building;
+        else return user;
     }
 
     private boolean existsById(Long id) {
-        return buildingRepository.existsById(id);
+        return userRepository.existsById(id);
     }
 
-    public Building save(Building building) throws BadResourceException, ResourceAlreadyExistsException {
-        if (!StringUtils.isEmpty(building.getName())) {
-            if (building.getId() != null && existsById(building.getId())) {
-                throw new ResourceAlreadyExistsException("Building with id: " + building.getId() +
+    public User save(User user) throws BadResourceException, ResourceAlreadyExistsException {
+        if (!StringUtils.isEmpty(user.getName())) {
+            if (user.getId() != null && existsById(user.getId())) {
+                throw new ResourceAlreadyExistsException("Building with id: " + user.getId() +
                         " already exists");
             }
-            return buildingRepository.save(building);
+            return userRepository.save(user);
         }
         else {
             BadResourceException exc = new BadResourceException("Failed to save buildings");

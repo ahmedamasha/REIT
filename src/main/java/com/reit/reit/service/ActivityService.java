@@ -2,13 +2,13 @@ package com.reit.reit.service;
 
 import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
-import com.reit.reit.model.Building;
+import com.reit.reit.model.Activity;
 
 import java.util.List;
 
 public interface ActivityService {
 
-    List<Building> findAll(Integer pageNumber, Integer rowPerPage);
+    List<Activity> findAll(Integer pageNumber, Integer rowPerPage);
 
-    Building save(Building building) throws BadResourceException, ResourceAlreadyExistsException;
+    Activity save(Activity activity) throws BadResourceException, ResourceAlreadyExistsException;
 }

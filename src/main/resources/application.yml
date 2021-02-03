@@ -1,0 +1,24 @@
+server:
+  port: ${PORT:5500}
+
+spring:
+  application:
+    name: reit-app
+  datasource:
+
+    platform: org.hibernate.dialect.PostgreSQLDialect
+    url: ${FLYWAY_DB_URL:jdbc:postgresql://localhost:5432/tests}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:123}
+    hikari:
+      maximum-pool-size: ${MAX_POOL_SIZE:30}
+      minimum-idle: ${INITIAL_DB_SIZE:10}
+
+  jpa:
+    properties:
+      hibernate.jdbc.lob.non_contextual_creation: true
+    hibernate:
+      ddl-auto: update
+  flyway:
+    enabled: true
+    baseline-on-migrate: true

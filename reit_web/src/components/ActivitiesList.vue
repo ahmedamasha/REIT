@@ -6,10 +6,7 @@
                @input="searchTitle"    v-model="title"/>
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button"
-                  @click="searchTitle"
-          >
-            Search
-          </button>
+                  @click="searchTitle">Search</button>
         </div>
       </div>
     </div>
@@ -120,13 +117,6 @@ export default {
   max-width: 750px;
   margin: auto;
 }
-
-.status {
-  float: right;
-  font-family: Tahoma;
-  color: white;
-}
-
 .list-group-item.active {
   background-color: #fff;
   border-color: #afafaf;

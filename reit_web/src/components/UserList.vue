@@ -123,12 +123,6 @@ export default {
   margin: auto;
 }
 
-.status {
-  float: right;
-  font-family: Tahoma;
-  color: white;
-}
-
 .list-group-item.active {
   background-color: #fff;
   border-color: #afafaf;

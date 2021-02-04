@@ -1,0 +1,10 @@
+.badge{
+    padding: 10px;
+    width: 120px;
+}
+.status {
+    width: 121px;
+    float: right;
+    font-family: Tahoma;
+    color: white;
+}

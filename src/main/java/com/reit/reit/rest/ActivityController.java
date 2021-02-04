@@ -48,4 +48,9 @@ public class ActivityController {
     public ResponseEntity<List<Activity>> findAllActivitiesByUser(@PathVariable(required = false) Integer asignId) {
         return ResponseEntity.ok(activityService.findAllActivitiesByUser(asignId));
     }
+
+    @GetMapping(value = "/bulding/{buldingId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Activity>> findAllActivitiesByBuilding(@PathVariable(required = false) Integer buldingId) {
+        return ResponseEntity.ok(activityService.findAllActivitiesByUser(buldingId));
+    }
 }

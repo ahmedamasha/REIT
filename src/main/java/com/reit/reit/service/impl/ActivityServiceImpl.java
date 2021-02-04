@@ -35,6 +35,12 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
+    @Override
+    public List<Activity> findAllActivitiesByBuilding(Integer buldingId) {
+        return activityRepository.findAllByBuilding_id(buldingId);
+    }
+
+
     public Activity findById(Integer id) throws ResourceNotFoundException {
         Activity activity = activityRepository.findById(id).orElse(null);
         if (activity == null) {

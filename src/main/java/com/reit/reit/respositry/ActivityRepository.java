@@ -11,4 +11,6 @@ public interface ActivityRepository extends PagingAndSortingRepository<Activity,
 
     List<Activity> findAllByUser_id(Integer asignId);
 
- }
+    List<Activity> findAllByBuilding_id(Integer buldingId);
+
+}

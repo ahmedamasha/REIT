@@ -4,13 +4,16 @@
       <router-link to="/" class="navbar-brand">REIT for Managing buildings</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
+          <router-link to="/home" class="nav-link">Home Page</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/activities" class="nav-link">Activities [projects]</router-link>
         </li>
       </div>
     </nav>
 
     <div class="container mt-3">
-      <router-view />
+      <router-view/>
     </div>
   </div>
 </template>

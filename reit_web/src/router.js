@@ -7,6 +7,12 @@ export default new Router({
     routes: [
         {
             path: "/",
+            alias: "/home",
+            name: "homepage",
+            component: () => import("./components/HomePage")
+        },
+        {
+            path: "/activities",
             alias: "/activities",
             name: "activities",
             component: () => import("./components/ActivitiesList")

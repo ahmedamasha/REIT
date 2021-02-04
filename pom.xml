@@ -101,7 +101,7 @@
                             <outputDirectory>${basedir}/target/classes/static/</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/../reit_web/dist</directory>
+                                    <directory>${basedir}/reit_web/dist</directory>
                                 </resource>
                             </resources>
                         </configuration>

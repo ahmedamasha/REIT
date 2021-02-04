@@ -28,6 +28,17 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+/reit_web/node_modules
+/reit_web/dist
+/reit_web/public
 
-### VS Code ###
-.vscode/
+# local env files
+reit_web/.env.local
+reit_web/.env.*.local
+
+# Log files
+reit_web/npm-debug.log*
+reit_web/yarn-debug.log*
+reit_web/yarn-error.log*
+
+

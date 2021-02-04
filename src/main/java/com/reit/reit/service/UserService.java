@@ -2,6 +2,7 @@ package com.reit.reit.service;
 
 import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
+import com.reit.reit.model.Activity;
 import com.reit.reit.model.Building;
 import com.reit.reit.model.User;
 

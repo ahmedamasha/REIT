@@ -8,4 +8,7 @@ import java.util.List;
 public interface ActivityRepository extends PagingAndSortingRepository<Activity, Integer> {
 
     List<Activity> findActivitiesByActivityNameContains(String name);
-}
+
+    List<Activity> findAllByUser_id(Integer asignId);
+
+ }

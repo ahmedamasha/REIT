@@ -6,7 +6,9 @@ import com.reit.reit.model.Activity;
 import com.reit.reit.model.Building;
 import com.reit.reit.service.ActivityService;
 import com.reit.reit.service.BuildingService;
+import com.reit.reit.service.UserService;
 import com.sun.istack.NotNull;
+import io.swagger.v3.oas.annotations.security.OAuthFlow;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -26,6 +28,7 @@ public class ActivityController {
     @Autowired
     private ActivityService activityService;
 
+
     private final int ROW_PER_PAGE = 5;
 
     @PostMapping
@@ -33,11 +36,16 @@ public class ActivityController {
         return activityService.save(activity);
     }
 
-
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Activity>> findAll(
             @RequestParam(value = "page", defaultValue = "1") int pageNumber,
             @RequestParam(required = false) String title) {
         return ResponseEntity.ok(activityService.findAll(title,pageNumber, ROW_PER_PAGE));
+    }
+
+
+    @GetMapping(value = "/user/{asignId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Activity>> findAllActivitiesByUser(@PathVariable(required = false) Integer asignId) {
+        return ResponseEntity.ok(activityService.findAllActivitiesByUser(asignId));
     }
 }

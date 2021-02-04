@@ -10,5 +10,7 @@ public interface ActivityService {
 
     List<Activity> findAll(String title, Integer pageNumber, Integer rowPerPage);
 
+    List<Activity> findAllActivitiesByUser(Integer assignId);
+
     Activity save(Activity activity) throws BadResourceException, ResourceAlreadyExistsException;
 }

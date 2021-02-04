@@ -43,15 +43,16 @@ create table activities
     activity_name varchar(255),
     created_at timestamp not null,
     updated_at timestamp not null,
-    assigned_to integer
-        constraint fk64vpk1q24hhm6ws0nb1iawvyf
-            references users,
     building_id integer not null
         constraint fk4wsjp1hayv4bd4wj18xropoy2
             references building,
     status_id integer not null
         constraint fk32qf1db139jl0buvq4lkfkoqw
-            references status
+            references status,
+    user_id integer
+        constraint fkq6cjukylkgxdjkm9npk9va2f2
+            references users
 );
 
 alter table activities owner to postgres;
+

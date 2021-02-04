@@ -3,6 +3,7 @@ package com.reit.reit.service.impl;
 import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
 import com.reit.reit.exception.ResourceNotFoundException;
+import com.reit.reit.model.Activity;
 import com.reit.reit.model.Building;
 import com.reit.reit.model.User;
 import com.reit.reit.respositry.BuildingRepository;

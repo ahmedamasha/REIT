@@ -17,6 +17,6 @@ INSERT INTO users ( name  ) VALUES ('Gasser');
 
 
 
-INSERT INTO activities (active,  activity_name, created_at, updated_at , assigned_to,building_id,status_id) VALUES (true ,'fixing AC' ,'2016-06-22 19:10:25-07','2016-06-22 19:10:25-07', 1 ,1 ,1);
-INSERT INTO activities (active,  activity_name, created_at, updated_at , assigned_to,building_id,status_id) VALUES (true ,'fixing , cleaning the windowes' ,'2016-06-22 19:10:25-07','2016-06-22 19:10:25-07', 2 ,1 ,2);
-INSERT INTO activities (active,  activity_name, created_at, updated_at , assigned_to,building_id,status_id) VALUES (true ,' works in the roof ' ,'2016-06-22 19:10:25-07','2016-06-22 19:10:25-07', 1 ,3 ,1);
+INSERT INTO activities (active,  activity_name, created_at, updated_at , user_id,building_id,status_id) VALUES (true ,'fixing AC' ,'2016-06-22 19:10:25-07','2016-06-22 19:10:25-07', 1 ,1 ,1);
+INSERT INTO activities (active,  activity_name, created_at, updated_at , user_id,building_id,status_id) VALUES (true ,'fixing , cleaning the windowes' ,'2016-06-22 19:10:25-07','2016-06-22 19:10:25-07', 2 ,1 ,2);
+INSERT INTO activities (active,  activity_name, created_at, updated_at , user_id,building_id,status_id) VALUES (true ,' works in the roof ' ,'2016-06-22 19:10:25-07','2016-06-22 19:10:25-07', 1 ,3 ,1);

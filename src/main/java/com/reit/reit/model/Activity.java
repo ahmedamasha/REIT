@@ -27,8 +27,8 @@ public class Activity implements Serializable {
     private String activityName;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinColumn(name = "assigned_to")
-    private User assigned_to;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "building_id", nullable = false)

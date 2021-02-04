@@ -1,6 +1,8 @@
 package com.reit.reit.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -9,9 +11,11 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
-@Data
+@Setter
+@Getter
 @Table(name = "building")
 public class Building implements Serializable {
 
@@ -20,7 +24,7 @@ public class Building implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @NotBlank(message = "Name is mandatory")
     private String name;
@@ -29,11 +33,13 @@ public class Building implements Serializable {
     private boolean active;
 
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, length = 19)
-    private Timestamp createdAt;
+    private Date createdAt;
     @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false, length = 19)
-    private Timestamp updatedAt;
+    private Date updatedAt;
 
     @Override
     public String toString() {

@@ -26,14 +26,14 @@ public class ActivityServiceImpl implements ActivityService {
         return activity;
     }
 
-    public Activity findById(Long id) throws ResourceNotFoundException {
+    public Activity findById(Integer id) throws ResourceNotFoundException {
         Activity activity = activityRepository.findById(id).orElse(null);
         if (activity == null) {
             throw new ResourceNotFoundException("Cannot find activity with id: " + id);
         } else return activity;
     }
 
-    private boolean existsById(Long id) {
+    private boolean existsById(Integer id) {
         return activityRepository.existsById(id);
     }
 

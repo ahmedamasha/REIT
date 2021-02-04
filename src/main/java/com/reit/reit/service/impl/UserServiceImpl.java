@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
-    public User findById(Long id) throws ResourceNotFoundException {
+    public User findById(Integer id) throws ResourceNotFoundException {
         User user = userRepository.findById(id).orElse(null);
         if (user==null) {
             throw new ResourceNotFoundException("Cannot find Building with id: " + id);
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
         else return user;
     }
 
-    private boolean existsById(Long id) {
+    private boolean existsById(Integer id) {
         return userRepository.existsById(id);
     }
 

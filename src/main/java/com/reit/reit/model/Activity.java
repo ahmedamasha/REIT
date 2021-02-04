@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "activities")
@@ -20,30 +21,34 @@ public class Activity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @NotBlank(message = "Activity Name is mandatory")
     private String activityName;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "assigned_to")
     private User assigned_to;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "building_id", nullable = false)
     private Building building;
 
-    private Integer status;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "status_id",  nullable = false)
+    private Status status;
 
     @Column(name = "active")
     private boolean active;
 
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, length = 19)
-    private Timestamp createdAt;
+    private Date createdAt;
     @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false, length = 19)
-    private Timestamp updatedAt;
+    private Date updatedAt;
 
 
     @Override

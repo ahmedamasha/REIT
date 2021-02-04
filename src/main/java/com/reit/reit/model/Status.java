@@ -1,16 +1,19 @@
 package com.reit.reit.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Data
-@Table(name = "users")
-public class User implements Serializable {
+@Table(name = "status")
+public class Status implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 4048798962266546485L;
@@ -21,6 +24,17 @@ public class User implements Serializable {
 
     @NotBlank(message = "Name is mandatory")
     private String name;
+
+    private String color;
+
+    @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, length = 19)
+    private Date createdAt;
+    @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at", nullable = false, length = 19)
+    private Date updatedAt;
 
     @Override
     public String toString() {
@@ -43,7 +57,7 @@ public class User implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        User other = (User) obj;
+        Status other = (Status) obj;
         if (id == null) {
             if (other.id != null)
                 return false;

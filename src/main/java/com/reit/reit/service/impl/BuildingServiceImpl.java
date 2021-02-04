@@ -26,7 +26,7 @@ public class BuildingServiceImpl implements BuildingService {
         return buildings;
     }
 
-    public Building findById(Long id) throws ResourceNotFoundException {
+    public Building findById(Integer id) throws ResourceNotFoundException {
         Building building = buildingRepository.findById(id).orElse(null);
         if (building==null) {
             throw new ResourceNotFoundException("Cannot find Building with id: " + id);
@@ -34,7 +34,7 @@ public class BuildingServiceImpl implements BuildingService {
         else return building;
     }
 
-    private boolean existsById(Long id) {
+    private boolean existsById(Integer id) {
         return buildingRepository.existsById(id);
     }
 

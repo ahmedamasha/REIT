@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search by activityName"
-               @input="searchTitle"    v-model="title"/>
+               @input="searchTitle" v-model="title"/>
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button"
                   @click="searchTitle"
@@ -14,7 +14,12 @@
       </div>
     </div>
     <div class="col-md-12">
-
+      <h3 style="font-size: 23px;
+                  display: block;
+                  margin-bottom: 35px;
+                  margin-top: 30px;">
+        Here's the building Projects (Activities) : {{ headlineName }}
+      </h3>
       <table class="table table-hover">
         <thead>
         <tr>
@@ -48,7 +53,6 @@
           <td>
 
 
-
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name
               }}
@@ -73,7 +77,8 @@ export default {
       activities: [],
       currentActivity: null,
       currentIndex: -1,
-      title: ""
+      title: "",
+      headlineName: ""
     };
   },
   methods: {
@@ -82,6 +87,7 @@ export default {
           .then(response => {
             console.log(response.data);
             this.activities = response.data;
+            this.headlineName = response.data[0].building.name;
           })
           .catch(e => {
             console.log(e);

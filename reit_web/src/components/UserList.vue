@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search by activityName"
-               @input="searchTitle"    v-model="title"/>
+               @input="searchTitle" v-model="title"/>
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button"
                   @click="searchTitle"
@@ -15,13 +15,18 @@
     </div>
     <div class="col-md-12">
 
+      <h3 style="font-size: 23px;
+                  display: block;
+                  margin-bottom: 35px;
+                  margin-top: 30px;">
+        Here's the  User Projects (Activities) : {{ headlineName }}
+      </h3>
       <table class="table table-hover">
         <thead>
         <tr>
           <th>#</th>
           <th>Activity Name</th>
           <th>Building Name</th>
-          <th>Assigned_to</th>
           <th>Actions</th>
         </tr>
         </thead>
@@ -39,14 +44,9 @@
               {{ activity.building.name }}
             </router-link>
           </td>
-          <td>
-            <router-link :to="'/activities/user/' + activity.user.id" class="badge badge-warning">
-              {{ activity.user.name }}
-            </router-link>
-          </td>
-          <td>
-          <td>
 
+          <td>
+          <td>
 
 
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
@@ -73,7 +73,8 @@ export default {
       activities: [],
       currentActivity: null,
       currentIndex: -1,
-      title: ""
+      title: "",
+      headlineName: ""
     };
   },
   methods: {
@@ -82,6 +83,7 @@ export default {
           .then(response => {
             console.log(response.data);
             this.activities = response.data;
+            this.headlineName = response.data[0].user.name;
           })
           .catch(e => {
             console.log(e);

@@ -19,7 +19,7 @@
                   display: block;
                   margin-bottom: 35px;
                   margin-top: 30px;">
-        Here's the  User Projects (Activities) : {{ headlineName }}
+        Here's the  User Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span>
       </h3>
       <table class="table table-hover">
         <thead>
@@ -46,8 +46,6 @@
           </td>
 
           <td>
-          <td>
-
 
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name

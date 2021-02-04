@@ -18,14 +18,13 @@
                   display: block;
                   margin-bottom: 35px;
                   margin-top: 30px;">
-        Here's the building Projects (Activities) : {{ headlineName }}
+        Here's the building Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span>
       </h3>
       <table class="table table-hover">
         <thead>
         <tr>
           <th>#</th>
           <th>Activity Name</th>
-          <th>Building Name</th>
           <th>Assigned_to</th>
           <th>Actions</th>
         </tr>
@@ -40,19 +39,12 @@
           <td>{{ activity.id }}</td>
           <td>{{ activity.activityName }}</td>
           <td>
-            <router-link :to="'/activities/building/' + activity.building.id" class="badge badge-warning">
-              {{ activity.building.name }}
-            </router-link>
-          </td>
-          <td>
             <router-link :to="'/activities/user/' + activity.user.id" class="badge badge-warning">
               {{ activity.user.name }}
             </router-link>
           </td>
           <td>
           <td>
-
-
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name
               }}

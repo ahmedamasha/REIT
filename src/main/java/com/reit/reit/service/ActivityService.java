@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ActivityService {
 
-    List<Activity> findAll(Integer pageNumber, Integer rowPerPage);
+    List<Activity> findAll(String title, Integer pageNumber, Integer rowPerPage);
 
     Activity save(Activity activity) throws BadResourceException, ResourceAlreadyExistsException;
 }

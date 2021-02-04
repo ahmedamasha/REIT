@@ -36,7 +36,8 @@ public class ActivityController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Activity>> findAll(
-            @RequestParam(value = "page", defaultValue = "1") int pageNumber) {
-        return ResponseEntity.ok(activityService.findAll(pageNumber, ROW_PER_PAGE));
+            @RequestParam(value = "page", defaultValue = "1") int pageNumber,
+            @RequestParam(required = false) String title) {
+        return ResponseEntity.ok(activityService.findAll(title,pageNumber, ROW_PER_PAGE));
     }
 }

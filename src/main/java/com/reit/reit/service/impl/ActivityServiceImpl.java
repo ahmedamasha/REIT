@@ -20,7 +20,10 @@ public class ActivityServiceImpl implements ActivityService {
     @Autowired
     public ActivityRepository activityRepository;
 
-    public List<Activity> findAll(Integer pageNumber, Integer rowPerPage) {
+    public List<Activity> findAll(String title, Integer pageNumber, Integer rowPerPage) {
+        if (title != null) {
+            return activityRepository.findActivitiesByActivityNameContains(title);
+        }
         List<Activity> activity = new ArrayList<>();
         activityRepository.findAll(PageRequest.of(pageNumber - 1, rowPerPage)).forEach(activity::add);
         return activity;

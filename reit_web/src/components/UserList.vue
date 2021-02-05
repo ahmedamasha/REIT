@@ -19,15 +19,15 @@
                   display: block;
                   margin-bottom: 35px;
                   margin-top: 30px;">
-        Here's the  User Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span>
+        Here's the User Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span>
       </h3>
       <table class="table table-hover">
         <thead>
         <tr>
           <th>#</th>
           <th>Activity Name</th>
-          <th>Building Name</th>
-          <th> User Status</th>
+          <th>Building Name , Status</th>
+          <th>User Activity Status</th>
         </tr>
         </thead>
         <tbody>
@@ -43,14 +43,15 @@
             <router-link :to="'/activities/building/' + activity.building.id" class="badge badge-warning">
               {{ activity.building.name }}
             </router-link>
-          </td>
-
-          <td>
 
             <div class="btn status" :style="{'background-color':activity.building.status.color  }"> {{
                 activity.building.status.name
               }}
             </div>
+
+          </td>
+
+          <td>
 
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name

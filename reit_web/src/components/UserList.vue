@@ -27,7 +27,7 @@
           <th>#</th>
           <th>Activity Name</th>
           <th>Building Name</th>
-          <th>Actions</th>
+          <th> User Status</th>
         </tr>
         </thead>
         <tbody>
@@ -46,6 +46,11 @@
           </td>
 
           <td>
+
+            <div class="btn status" :style="{'background-color':activity.building.status.color  }"> {{
+                activity.building.status.name
+              }}
+            </div>
 
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name
@@ -82,6 +87,7 @@ export default {
             console.log(response.data);
             this.activities = response.data;
             this.headlineName = response.data[0].user.name;
+            // this.headlineStatus = response.data[0].user.status;
           })
           .catch(e => {
             console.log(e);

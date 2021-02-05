@@ -18,15 +18,15 @@
                   display: block;
                   margin-bottom: 35px;
                   margin-top: 30px;">
-        Here's the building Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span>
+        Here's the building Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span> & Building Status : <span style="background-color:{ headlineColor}">{{ headlineStatus }}</span>
       </h3>
       <table class="table table-hover">
         <thead>
         <tr>
           <th>#</th>
           <th>Activity Name</th>
-          <th>Assigned_to</th>
-          <th>Actions</th>
+          <th>Assigned_to </th>
+          <th>Activity Status</th>
         </tr>
         </thead>
         <tbody>
@@ -42,15 +42,27 @@
             <router-link :to="'/activities/user/' + activity.user.id" class="badge badge-warning">
               {{ activity.user.name }}
             </router-link>
+
           </td>
-          <td>
+
           <td>
             <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name
               }}
             </div>
+
+<!--            <router-link :to="'/activities/building/' + activity.building.id" class="btn badge-warning">-->
+<!--              {{ activity.building.name }}-->
+<!--            </router-link>-->
+
+<!--            <div class="btn status" :style="{'background-color':activity.building.status.color  }"> {{-->
+<!--                activity.building.status.name-->
+<!--              }}-->
+<!--            </div>-->
+
           </td>
 
+          <td>
         </tr>
         </tbody>
       </table>
@@ -70,7 +82,9 @@ export default {
       currentActivity: null,
       currentIndex: -1,
       title: "",
-      headlineName: ""
+      headlineName: "",
+      headlineStatus: "",
+      headlineColor: ""
     };
   },
   methods: {
@@ -79,7 +93,8 @@ export default {
           .then(response => {
             console.log(response.data);
             this.activities = response.data;
-            this.headlineName = response.data[0].building.name;
+            this.headlineStatus = response.data[0].building.status.name;
+            this.headlineColor= response.data[0].building.status.color;
           })
           .catch(e => {
             console.log(e);

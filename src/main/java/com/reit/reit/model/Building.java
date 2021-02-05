@@ -33,6 +33,10 @@ public class Building implements Serializable {
     @Column(name = "active")
     private boolean active;
 
+    @OneToOne
+    @JoinColumn(name = "status_id",  nullable = false)
+    private Status status;
+
     @JsonIgnore
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)

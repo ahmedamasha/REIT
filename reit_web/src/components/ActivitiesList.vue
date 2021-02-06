@@ -43,7 +43,7 @@
 
           </td>
           <td>
-            <router-link :to="'/activities/user/' + activity.user.id" class="badge badge-warning">
+            <router-link :to="'/activities/user/' + activity.user.id" class="btn badge-warning">
               {{ activity.user.name }}
             </router-link>
 

@@ -3,29 +3,48 @@
     <h3> Home page</h3>
     <img style="width:250px;height: 230px" src="../../public/logo.svg" alt="Kiwi standing on oval">
 
+    <div class="row justify-content-start">
+      <div class="col-8">
 
-      <div class="container" id="arc" ></div>
+        <div id="arc"></div>
+      </div>
+      <div class="col-4" style="padding-top: 17%;">
+        <div class="analtics"><label> Number for Building : </label> <span> 20</span></div>
+        <div class="analtics"><label> Number for Tasks    : </label> <span> 20</span></div>
+        <div class="analtics"><label> Number for Employee : </label> <span> 20</span></div>
+      </div>
+    </div>
+
 
   </div>
 </template>
 
 <script>
 import * as d3 from "d3";
+import ActivityDataService from "@/services/ActivityDataService";
+
 export default {
   name: "Activities-list",
   data() {
     return {
-      gdp: [
-        {country: "USA", value: 20.5 },
-        {country: "China", value: 13.4 },
-        {country: "Germany", value: 4.0 },
-        {country: "Japan", value: 4.9 },
-        {country: "France", value: 2.8 }
-      ]
+      gdp: []
     };
   },
+
+  created() {
+    ActivityDataService.findByUsersActivity().then(response => {
+      this.gdp = response.data;
+      this.generateArc();
+    }).catch(e => {
+      console.log(e);
+    });
+  },
+
   methods: {
     generateArc() {
+
+      console.log(this.gdp);
+
       const w = 500;
       const h = 500;
 
@@ -38,7 +57,7 @@ export default {
       const sortedGDP = this.gdp.sort((a, b) => (a.value > b.value ? 1 : -1));
       const color = d3.scaleOrdinal(d3.schemeDark2);
 
-      const max_gdp = d3.max(sortedGDP, o => o.value);
+      const max_gdp = d3.max(sortedGDP, o => o.totalActivities);
 
       const angleScale = d3
           .scaleLinear()
@@ -50,7 +69,7 @@ export default {
           .innerRadius((d, i) => (i + 1) * 25)
           .outerRadius((d, i) => (i + 2) * 25)
           .startAngle(angleScale(0))
-          .endAngle(d => angleScale(d.value));
+          .endAngle(d => angleScale(d.totalActivities));
 
       const g = svg.append("g");
 
@@ -62,13 +81,13 @@ export default {
           .attr("fill", (d, i) => color(i))
           .attr("stroke", "#FFF")
           .attr("stroke-width", "1px")
-          .on("mouseenter", function() {
+          .on("mouseenter", function () {
             d3.select(this)
                 .transition()
                 .duration(200)
                 .attr("opacity", 0.5);
           })
-          .on("mouseout", function() {
+          .on("mouseout", function () {
             d3.select(this)
                 .transition()
                 .duration(200)
@@ -79,20 +98,35 @@ export default {
           .data(this.gdp)
           .enter()
           .append("text")
-          .text(d => `${d.country} -  ${d.value} Trillion`)
+          .text(d => `${d.userName} -  ${d.totalActivities} Activities`)
           .attr("x", -150)
           .attr("dy", -8)
           .attr("y", (d, i) => -(i + 1) * 25);
 
       g.attr("transform", "translate(200,300)");
+    },
+    generate2xchart() {
+
     }
   },
-  mounted() {
-    this.generateArc();
-  }
 };
 </script>
 
 <style>
+.analtics{
+  display: block;
+  width:100%;
+  height: 40px;
+  font-size: 26px;
+}
+
+.analtics span{
+  color: orangered;
+}
+
+.analtics label{
+  color: black;
+  width: 80%;
+}
 
 </style>

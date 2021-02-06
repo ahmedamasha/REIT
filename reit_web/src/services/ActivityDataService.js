@@ -20,6 +20,10 @@ class ActivityDataService {
     findByUser(userId) {
         return http.get(`/activities/user/${userId}`);
     }
+
+    findByUsersActivity() {
+        return http.get(`/user/activities`);
+    }
 }
 
 export default new ActivityDataService();

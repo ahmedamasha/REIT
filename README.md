@@ -40,7 +40,7 @@ you will notice
 <br><br>
 in console once you run using this CMD : `mvn spring-boot:run`   on jetty embedded  server
  <br>
-After running the app ,  for BE , you wil find all endpoints with docs here in swagger
+After running the app ,  for BE , you will find all endpoints with docs here in swagger
 
 `http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#`
 
@@ -52,16 +52,16 @@ After running the app ,  for BE , you wil find all endpoints with docs here in s
 - Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
 
 * **Use Docker**
-  
-- Using docker-compose file **Recommended in development**
-  
-- just run `docker-compose build` 
-- then `docker-compose up`
-- then the project exposed to 5500 port 
-- then hit `http://localhost:5500/#/home`
+      
+    - Using docker-compose file **Recommended in development**
+      
+    - just run `docker-compose build` 
+    - then `docker-compose up`
+    - then the project exposed to 5500 port 
+    - then hit `http://localhost:5500/#/home`
   <hr>
 
-- U can also run (Docker Native) For DB (postgres) : 
+    - U can also run (Docker Native) For DB (postgres) : 
 
 
 `docker run --name postgresql -p 5432:5432  -e POSTGRESQL_USERNAME=Sylvain -e ALLOW_EMPTY_PASSWORD=yes  -e POSTGRESQL_DATABASE=test  bitnami/postgresql:latest`

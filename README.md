@@ -1,14 +1,15 @@
 * **welcome to the Task List app** 
 
-Hers/ the documentation of the app 
+Here's the documentation of the app 
 
-* - Application Description*
+* - **Application Description**
+    
 This app responsible for monitoring the development process of the buildings for Golden Real Estate Company 
 depending on the status for every activity per the person (employee)
 
-* Assumptions : No assumptions , just using flyway to init dummy data into db
+* **Assumptions :** No assumptions , just using flyway to init dummy data into db
   <hr>
-* - Application features* 
+*  **Application features** 
 
 - Able to monitor the progress of the company activities per building
 - Able to monitor the progress of the building
@@ -17,17 +18,16 @@ depending on the status for every activity per the person (employee)
 - d3.js charts for monitor the activity per user 
 - Search bar to search by name in the projects grid view
   <hr>
-*- Tech stack**
+*  **Tech stack** 
+   
    1- Java Spring Boot for BE 
    2- VueJs for FE
-   3- d3 for charts like this
-  ![alt text](./doc/img.png)
-
+   3- d3 for charts visualisation
    4- postgres for db 
    5- docker to create postgres container
    6- swagger for docs 
 
-*- How to run the app*
+*  **How to run the app** 
 
 if you are using IDE or terminal  
 
@@ -46,7 +46,9 @@ After running the app ,  for BE , you wil find all endpoints with docs here in s
 
 <br>
 <hr>
-*- Bonus* 
+
+**_Bonus_**
+
 - Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
 - ** with docker ** 
   

@@ -39,14 +39,14 @@
           <td>{{ activity.id }}</td>
           <td>{{ activity.activityName }}</td>
           <td>
-            <router-link :to="'/activities/user/' + activity.user.id" class="badge badge-warning">
+            <router-link :to="'/activities/user/' + activity.user.id" class="badge  badge-warning">
               {{ activity.user.name }}
             </router-link>
 
           </td>
 
           <td>
-            <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
+            <div class="btn btn_progress  status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name
               }}
             </div>

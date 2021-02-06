@@ -44,7 +44,7 @@
               {{ activity.building.name }}
             </router-link>
 
-            <div class="btn status" :style="{'background-color':activity.building.status.color  }"> {{
+            <div class="btn btn_progress  status" :style="{'background-color':activity.building.status.color  }"> {{
                 activity.building.status.name
               }}
             </div>

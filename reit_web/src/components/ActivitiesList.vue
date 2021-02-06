@@ -32,7 +32,7 @@
           <td>{{ activity.id }}</td>
           <td>{{ activity.activityName }}</td>
           <td>
-            <router-link :to="'/activities/building/' + activity.building.id" class="btn badge-warning">
+            <router-link :to="'/activities/building/' + activity.building.id" class="btn  btn_progress  badge-warning">
               {{ activity.building.name }}
             </router-link>
 
@@ -43,11 +43,11 @@
 
           </td>
           <td>
-            <router-link :to="'/activities/user/' + activity.user.id" class="btn badge-warning">
+            <router-link :to="'/activities/user/' + activity.user.id" class="btn btn_progress  badge-warning">
               {{ activity.user.name }}
             </router-link>
 
-            <div class="btn status" :style="{'background-color':activity.status.color  }"> {{
+            <div class="btn  btn_progress  status" :style="{'background-color':activity.status.color  }"> {{
                 activity.status.name
               }}
             </div>

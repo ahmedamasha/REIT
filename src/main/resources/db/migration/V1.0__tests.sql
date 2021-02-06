@@ -9,7 +9,6 @@ create table status
     updated_at timestamp not null
 );
 
-alter table status owner to postgres;
 
 create table building
 (
@@ -25,7 +24,6 @@ create table building
             references status
 );
 
-alter table building owner to postgres;
 
 create table users
 (
@@ -35,7 +33,6 @@ create table users
     name varchar(255)
 );
 
-alter table users owner to postgres;
 
 create table activities
 (
@@ -56,5 +53,3 @@ create table activities
         constraint fkq6cjukylkgxdjkm9npk9va2f2
             references users
 );
-
-alter table activities owner to postgres;

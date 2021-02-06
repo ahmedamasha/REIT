@@ -65,4 +65,9 @@ public class ActivityServiceImpl implements ActivityService {
             throw exc;
         }
     }
+
+    @Override
+    public Integer getCountActivities() {
+        return (int) activityRepository.count();
+    }
 }

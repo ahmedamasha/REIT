@@ -40,17 +40,21 @@ public class ActivityController {
     public ResponseEntity<List<Activity>> findAll(
             @RequestParam(value = "page", defaultValue = "1") int pageNumber,
             @RequestParam(required = false) String title) {
-        return ResponseEntity.ok(activityService.findAll(title,pageNumber, ROW_PER_PAGE));
+        return ResponseEntity.ok(activityService.findAll(title, pageNumber, ROW_PER_PAGE));
     }
 
-
-    @GetMapping(value = "/user/{asignId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/user/{asignId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Activity>> findAllActivitiesByUser(@PathVariable(required = false) Integer asignId) {
         return ResponseEntity.ok(activityService.findAllActivitiesByUser(asignId));
     }
 
-    @GetMapping(value = "/building/{buldingId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/building/{buldingId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Activity>> findAllActivitiesByBuilding(@PathVariable(required = false) Integer buldingId) {
         return ResponseEntity.ok(activityService.findAllActivitiesByBuilding(buldingId));
+    }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer getCountActivities() {
+        return activityService.getCountActivities();
     }
 }

@@ -14,11 +14,11 @@
       </div>
     </div>
     <div class="col-md-12">
-      <h3 style="font-size: 23px;
+      <h3 style="font-size: 17px;
                   display: block;
                   margin-bottom: 35px;
                   margin-top: 30px;">
-        Here's the building Projects (Activities) : <span style="color:orangered;font-size: 21px">{{ headlineName }}</span> & Building Status : <span class="statusHeadline">{{ headlineStatus }}</span>
+        Here's the building Projects (Activities) : <span style="color:orangered;">{{ headlineName }}</span> & Building Status : <span class="statusHeadline">{{ headlineStatus }}</span>
       </h3>
       <table class="table table-hover">
         <thead>

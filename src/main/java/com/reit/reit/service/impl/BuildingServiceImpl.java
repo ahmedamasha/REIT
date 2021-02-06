@@ -28,10 +28,9 @@ public class BuildingServiceImpl implements BuildingService {
 
     public Building findById(Integer id) throws ResourceNotFoundException {
         Building building = buildingRepository.findById(id).orElse(null);
-        if (building==null) {
+        if (building == null) {
             throw new ResourceNotFoundException("Cannot find Building with id: " + id);
-        }
-        else return building;
+        } else return building;
     }
 
     private boolean existsById(Integer id) {
@@ -45,11 +44,15 @@ public class BuildingServiceImpl implements BuildingService {
                         " already exists");
             }
             return buildingRepository.save(building);
-        }
-        else {
+        } else {
             BadResourceException exc = new BadResourceException("Failed to save buildings");
             exc.addErrorMessage("buildings is null or empty");
             throw exc;
         }
+    }
+
+    @Override
+    public Integer getCountBuildings() {
+        return (int) buildingRepository.count();
     }
 }

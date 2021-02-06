@@ -36,4 +36,9 @@ public class BuildingController {
             @RequestParam(value = "page", defaultValue = "1") int pageNumber) {
         return ResponseEntity.ok(buildingService.findAll(pageNumber, ROW_PER_PAGE));
     }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer getCountBuildings() {
+        return buildingService.getCountBuildings();
+    }
 }

@@ -37,8 +37,13 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll(pageNumber, ROW_PER_PAGE));
     }
 
-    @GetMapping(value = "/activities" , produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/activities", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<UserActivities>> gatAllTasks() {
         return ResponseEntity.ok(userService.findUsersActivityCount());
+    }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer getCountBuildings() {
+        return userService.getCountUsers();
     }
 }

@@ -16,4 +16,6 @@ public interface UserService {
     List<UserActivities> findUsersActivityCount();
 
     User save(User user) throws BadResourceException, ResourceAlreadyExistsException;
+
+    Integer getCountUsers();
 }

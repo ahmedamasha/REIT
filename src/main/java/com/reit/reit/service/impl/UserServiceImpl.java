@@ -13,8 +13,10 @@ import com.reit.reit.service.BuildingService;
 import com.reit.reit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +40,9 @@ public class UserServiceImpl implements UserService {
 
     public User findById(Integer id) throws ResourceNotFoundException {
         User user = userRepository.findById(id).orElse(null);
-        if (user==null) {
+        if (user == null) {
             throw new ResourceNotFoundException("Cannot find Building with id: " + id);
-        }
-        else return user;
+        } else return user;
     }
 
     private boolean existsById(Integer id) {
@@ -55,11 +56,14 @@ public class UserServiceImpl implements UserService {
                         " already exists");
             }
             return userRepository.save(user);
-        }
-        else {
+        } else {
             BadResourceException exc = new BadResourceException("Failed to save buildings");
             exc.addErrorMessage("buildings is null or empty");
             throw exc;
         }
+    }
+
+    public Integer getCountUsers() {
+        return (int) userRepository.count();
     }
 }

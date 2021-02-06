@@ -15,4 +15,6 @@ public interface ActivityService {
     List<Activity> findAllActivitiesByBuilding(Integer assignId);
 
     Activity save(Activity activity) throws BadResourceException, ResourceAlreadyExistsException;
+
+    Integer getCountActivities();
 }

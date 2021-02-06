@@ -11,4 +11,7 @@ public interface BuildingService {
     List<Building> findAll(Integer pageNumber, Integer rowPerPage);
 
     Building save(Building building) throws BadResourceException, ResourceAlreadyExistsException;
+
+    Integer getCountBuildings();
+
 }

@@ -66,5 +66,7 @@ After running the app ,  for BE , you wil find all endpoints with docs here in s
 **Image from the product :** 
 
 ![alt text](./doc/img_1.png)
+
 <hr>
+
 ![alt text](./doc/img_2.png)

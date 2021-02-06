@@ -20,7 +20,9 @@ depending on the status for every activity per the person (employee)
 *- Tech stack**
    1- Java Spring Boot for BE 
    2- VueJs for FE
-   3- d3 for charts
+   3- d3 for charts like this
+  ![alt text](./doc/img.png)
+
    4- postgres for db 
    5- docker to create postgres container
    6- swagger for docs 
@@ -40,9 +42,10 @@ in console once you run using this CMD : `mvn spring-boot:run`   on jetty embedd
  <br>
 After running the app ,  for BE , you wil find all endpoints with docs here in swagger
 
-http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#
-<br>
+`http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#`
 
+<br>
+<hr>
 *- Bonus* 
 - Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
 - ** with docker ** 
@@ -58,3 +61,10 @@ http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-confi
 - U can also run (Docker Native) For DB (postgres) : 
 `docker run --name postgresql -p 5432:5432  -e POSTGRESQL_USERNAME=Sylvain -e ALLOW_EMPTY_PASSWORD=yes  -e POSTGRESQL_DATABASE=test  bitnami/postgresql:latest`
  ` and create `tests` db manually 
+  
+<hr>
+**Image from the product :** 
+
+![alt text](./doc/img_1.png)
+<hr>
+![alt text](./doc/img_2.png)

@@ -6,7 +6,7 @@ Here's the documentation of the app
 - This app responsible for monitoring the development process of the buildings for Golden Real Estate Company 
 depending on the status for every activity per the person (employee)
 
-* **Assumptions :** No assumptions , just using flyway to init dummy data into db
+* **Assumptions :** No assumptions , just using java flyway-db dependency to init dummy data into db
   <hr>
 *  **Application features** 
 
@@ -17,14 +17,15 @@ depending on the status for every activity per the person (employee)
 - d3.js charts for monitor the activity per user 
 - Search bar to search by name in the projects grid view
   <hr>
+
 *  **Tech stack** 
    
-   1- Java Spring Boot for BE 
-   2- VueJs for FE
-   3- d3 for charts visualisation
-   4- postgres for db 
-   5- docker to create postgres container
-   6- swagger for docs 
+  - Java Spring Boot for BE 
+  - VueJs for FE
+  - d3 for charts visualisation
+  - postgres for db 
+  - docker to create postgres container
+  - swagger for docs 
 
 *  **How to run the app** 
 

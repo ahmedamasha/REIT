@@ -1,6 +1,8 @@
 server:
   port: ${PORT:5500}
-
+  jetty:
+    threads:
+      acceptors: 1
 spring:
   application:
     name: reit-app

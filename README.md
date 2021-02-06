@@ -61,8 +61,11 @@ After running the app ,  for BE , you wil find all endpoints with docs here in s
   <hr>
 
 - U can also run (Docker Native) For DB (postgres) : 
+
+
 `docker run --name postgresql -p 5432:5432  -e POSTGRESQL_USERNAME=Sylvain -e ALLOW_EMPTY_PASSWORD=yes  -e POSTGRESQL_DATABASE=test  bitnami/postgresql:latest`
- ` and create `tests` db manually 
+ 
+  then create `tests`  db manually 
   
 <hr>
 

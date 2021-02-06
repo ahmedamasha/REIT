@@ -3,6 +3,7 @@ package com.reit.reit.rest;
 import com.reit.reit.exception.BadResourceException;
 import com.reit.reit.exception.ResourceAlreadyExistsException;
 import com.reit.reit.model.User;
+import com.reit.reit.response.UserActivities;
 import com.reit.reit.service.UserService;
 import com.sun.istack.NotNull;
 import lombok.extern.slf4j.Slf4j;
@@ -34,5 +35,10 @@ public class UserController {
     public ResponseEntity<List<User>> findAll(
             @RequestParam(value = "page", defaultValue = "1") int pageNumber) {
         return ResponseEntity.ok(userService.findAll(pageNumber, ROW_PER_PAGE));
+    }
+
+    @GetMapping(value = "/activities" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<UserActivities>> gatAllTasks() {
+        return ResponseEntity.ok(userService.findUsersActivityCount());
     }
 }

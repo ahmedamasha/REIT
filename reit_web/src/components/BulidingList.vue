@@ -18,7 +18,7 @@
                   display: block;
                   margin-bottom: 35px;
                   margin-top: 30px;">
-        Here's the building Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span> & Building Status : <span style="background-color:{ headlineColor}">{{ headlineStatus }}</span>
+        Here's the building Projects (Activities) : <span style="color:orangered">{{ headlineName }}</span> & Building Status : <span style="background-color: deepskyblue">{{ headlineStatus }}</span>
       </h3>
       <table class="table table-hover">
         <thead>
@@ -51,18 +51,9 @@
               }}
             </div>
 
-<!--            <router-link :to="'/activities/building/' + activity.building.id" class="btn badge-warning">-->
-<!--              {{ activity.building.name }}-->
-<!--            </router-link>-->
-
-<!--            <div class="btn status" :style="{'background-color':activity.building.status.color  }"> {{-->
-<!--                activity.building.status.name-->
-<!--              }}-->
-<!--            </div>-->
 
           </td>
 
-          <td>
         </tr>
         </tbody>
       </table>

@@ -6,6 +6,7 @@ import com.reit.reit.exception.ResourceNotFoundException;
 import com.reit.reit.model.Activity;
 import com.reit.reit.model.Building;
 import com.reit.reit.model.User;
+import com.reit.reit.response.UserActivities;
 import com.reit.reit.respositry.BuildingRepository;
 import com.reit.reit.respositry.UserRepository;
 import com.reit.reit.service.BuildingService;
@@ -28,6 +29,11 @@ public class UserServiceImpl implements UserService {
         List<User> user = new ArrayList<>();
         userRepository.findAll(PageRequest.of(pageNumber - 1, rowPerPage)).forEach(user::add);
         return user;
+    }
+
+    @Override
+    public List<UserActivities> findUsersActivityCount() {
+        return userRepository.findUsersActivityCount();
     }
 
     public User findById(Integer id) throws ResourceNotFoundException {

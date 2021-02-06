@@ -49,7 +49,8 @@ After running the app ,  for BE , you wil find all endpoints with docs here in s
 **_Bonus_**
 
 - Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
-- ** with docker ** 
+
+* **Use Docker**
   
 - Using docker-compose file **Recommended in development**
   
@@ -64,7 +65,8 @@ After running the app ,  for BE , you wil find all endpoints with docs here in s
  ` and create `tests` db manually 
   
 <hr>
-**Image from the product :** 
+
+ **Image from the product :**  
 
 ![alt text](./doc/img_1.png)
 

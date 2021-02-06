@@ -9,9 +9,9 @@
         <div id="arc"></div>
       </div>
       <div class="col-4" style="padding-top: 17%;">
-        <div class="analtics"><label> Number for Building : </label> <span> 20</span></div>
-        <div class="analtics"><label> Number for Tasks    : </label> <span> 20</span></div>
-        <div class="analtics"><label> Number for Employee : </label> <span> 20</span></div>
+        <div class="analtics"><label> Number for Building : </label> <span> {{ buildingsCount}}</span></div>
+        <div class="analtics"><label> Number for Tasks    : </label> <span> {{ activiiesCount }}</span></div>
+        <div class="analtics"><label> Number for Employee : </label> <span> {{ userCount }}</span></div>
       </div>
     </div>
 
@@ -27,7 +27,10 @@ export default {
   name: "Activities-list",
   data() {
     return {
-      gdp: []
+      gdp: [],
+      userCount:0,
+      activiiesCount:0,
+      buildingsCount:0
     };
   },
 
@@ -38,6 +41,25 @@ export default {
     }).catch(e => {
       console.log(e);
     });
+
+    ActivityDataService.findByActivityCount().then(ra=>{
+      this.activiiesCount = ra.data;
+    }).catch(e => {
+      console.log(e);
+    });
+
+    ActivityDataService.findByBuildingCount().then(rb=>{
+      this.buildingsCount = rb.data;
+    }).catch(e => {
+      console.log(e);
+    });
+
+    ActivityDataService.findByUsersCount().then(ru=>{
+      this.userCount = ru.data;
+    }).catch(e => {
+      console.log(e);
+    });
+
   },
 
   methods: {
@@ -116,7 +138,7 @@ export default {
 .analtics{
   display: block;
   width:100%;
-  height: 40px;
+  height: 50px;
   font-size: 26px;
 }
 

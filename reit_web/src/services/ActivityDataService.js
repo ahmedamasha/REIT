@@ -24,6 +24,18 @@ class ActivityDataService {
     findByUsersActivity() {
         return http.get(`/user/activities`);
     }
+
+    findByUsersCount() {
+        return http.get(`/user/count`);
+    }
+
+    findByActivityCount() {
+        return http.get(`/activities/count`);
+    }
+
+    findByBuildingCount() {
+        return http.get(`/building/count`);
+    }
 }
 
 export default new ActivityDataService();

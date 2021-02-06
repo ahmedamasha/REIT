@@ -3,8 +3,7 @@
 Here's the documentation of the app 
 
 * **Application Description**
-    
-This app responsible for monitoring the development process of the buildings for Golden Real Estate Company 
+- This app responsible for monitoring the development process of the buildings for Golden Real Estate Company 
 depending on the status for every activity per the person (employee)
 
 * **Assumptions :** No assumptions , just using flyway to init dummy data into db

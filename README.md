@@ -32,10 +32,10 @@ if you are using IDE or terminal
 As long as am using spring boot as BE so it has jetty embedded server , and configured ,
 
 you will notice
-<br>
+<br><br>
 `2021-02-06 18:45:03.374  INFO 33843 --- [           main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 5500 (http/1.1) with context path '/'
- `
-<br>
+`
+<br><br>
 in console once you run using this CMD : `mvn spring-boot:run`   on jetty embedded  server
  <br>
 After running the app ,  for BE , you wil find all endpoints with docs here in swagger

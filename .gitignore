@@ -29,7 +29,6 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 /reit_web/node_modules
-/reit_web/dist
 
 # local env files
 reit_web/.env.local

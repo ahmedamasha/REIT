@@ -1,0 +1,28 @@
+body {
+    background: #FFFFEF;
+}
+
+.badge {
+    padding: 10px;
+    width: 120px;
+}
+
+.status {
+    font-family: Tahoma;
+    color: #ffffff;
+    width: 112px;
+    margin-left: 14px;
+}
+
+.btn_progress {
+    background-color: #f1f0ed;
+    width: 46%;
+}
+
+.statusHeadline {
+    background-color: rgb(0 123 255 / 25%);
+    padding: 6px;
+    border-radius: 5px;
+    font-family: "American Typewriter";
+
+}

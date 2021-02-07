@@ -29,7 +29,7 @@ public class ActivityController {
     private ActivityService activityService;
 
 
-    private final int ROW_PER_PAGE = 5;
+    private final int ROW_PER_PAGE = 30;
 
     @PostMapping
     public Activity add(@RequestBody @Valid @NotNull Activity activity) throws BadResourceException, ResourceAlreadyExistsException {

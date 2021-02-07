@@ -1,4 +1,4 @@
-* **welcome to the Task List app** 
+**welcome to the Task List app**
 
 Here's the documentation of the app 
 

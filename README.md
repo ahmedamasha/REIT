@@ -32,6 +32,10 @@ depending on the status for every activity per the person (employee)
 
 if you are using IDE or terminal  
 
+FE (vuejs , yarn)
+
+ - go to `cd REIT/reit_web` then `yarn install` then `yarn run build`
+
 As long as am using spring boot as BE so it has jetty embedded server , and configured ,
 
 you will notice
@@ -51,6 +55,7 @@ After running the app ,  for BE , you will find all endpoints with docs here in 
 **_Bonus_**
 
 - Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
+
 
 * **Use Docker**
       

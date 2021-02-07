@@ -34,9 +34,9 @@ if you are using IDE or terminal
 
 FE (vuejs , yarn)
 
- - go to `cd REIT/reit_web` then `yarn install` then `yarn run build`
+ - go to home of the project  `cd REIT/reit_web` then `yarn install` then `yarn run build`
 
-As long as am using spring boot as BE so it has jetty embedded server , and configured ,
+- back to `REIT/` As long as am using spring boot as BE so it has jetty embedded server , and configured ,
 
 you will notice
 <br><br>

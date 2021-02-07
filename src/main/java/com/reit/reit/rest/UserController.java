@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    private final int ROW_PER_PAGE = 5;
+    private final int ROW_PER_PAGE = 30;
 
     @PostMapping
     public User add(@RequestBody @Valid @NotNull User user) throws BadResourceException, ResourceAlreadyExistsException {

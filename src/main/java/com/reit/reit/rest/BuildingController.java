@@ -23,7 +23,7 @@ public class BuildingController {
     @Autowired
     private BuildingService buildingService;
 
-    private final int ROW_PER_PAGE = 5;
+    private final int ROW_PER_PAGE = 30;
 
     @PostMapping
     public Building add(@RequestBody @Valid @NotNull Building building) throws BadResourceException, ResourceAlreadyExistsException {

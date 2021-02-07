@@ -13,6 +13,9 @@
     </div>
     <div class="col-md-12">
 
+      <div class="alert alert-primary" role="alert">
+        HINT : Press on the user name or Building name to list all Activities related to it ...
+      </div>
       <table class="table table-hover">
         <thead>
         <tr>

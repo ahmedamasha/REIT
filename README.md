@@ -34,8 +34,8 @@ depending on the status for every activity per the person (employee)
 
 **FE (vueJs , yarn)**
 
-For FE I comliled the app using babel alreadt and pushed to github (recommended in production) , 
-but also give the baility for dev team to update and re-compile) using `yarn` 
+For FE I compiled the app using babel already and pushed to github (recommended in production) , 
+but also give the ability for dev team to update and re-compile) using `yarn` 
 
  - Go to home of the project  `cd REIT/reit_web` then `yarn install` then `yarn run build`
  

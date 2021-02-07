@@ -28,41 +28,37 @@ depending on the status for every activity per the person (employee)
   - docker to create postgres container
   - swagger for docs 
 
-*  **How to run the app** 
+*  **Installation Guid** 
 
-1- clone the app `git clone git@github.com:ahmedamasha/REIT.git`
+**First** clone the app `git clone git@github.com:ahmedamasha/REIT.git`
 
-**FE (vuejs , yarn)**
+**FE (vueJs , yarn)**
 
- - go to home of the project  `cd REIT/reit_web` then `yarn install` then `yarn run build`
-
-- back to `REIT/` As long as am using spring boot as BE so it has jetty embedded server , and configured ,
-
-
-<br><br>
-in console once you run using this CMD : `mvn spring-boot:run`   on jetty embedded  server
- <br>
-After running the app ,  for BE , you will find all endpoints with docs here in swagger
-
-`http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#`
-
-<br>
-
+ - Go to home of the project  `cd REIT/reit_web` then `yarn install` then `yarn run build`
+ 
 <hr>
 
-you will notice
-<br><br>
-`2021-02-06 18:45:03.374  INFO 33843 --- [           main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 5500 (http/1.1) with context path '/'
-`
+**BE (with/out Docker)**
 
+* **Without Docker**
+
+Back to home `REIT/` As long as am using spring boot as BE so it has jetty embedded server , and configured ,
+
+via console once you run using this CMD : `mvn spring-boot:run`   on jetty embedded  server
+ <br>
+After running the app ,  for BE , you will find all endpoints with docs here in **swagger**
+
+`http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#`
+ 
+<hr>
+
+U will notice this ime in Console <br> `2021-02-06 18:45:03.374  INFO 33843 --- [           main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 5500 (http/1.1) with context path '/'
+`
 <hr>
 
 **_Bonus_**
 
-- Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
-
-
-* **Use Docker**
+* **With Docker**
       
     - Using docker-compose file **Recommended in development**
     - cd REIT , then run `mvn clean install` &  run `docker-compose build` or directly  `docker-compose up`
@@ -78,7 +74,8 @@ you will notice
   then create `tests`  db manually 
   
 <hr>
-
+- Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
+<hr>
  **Image from the product :**  
 
 ![alt text](./doc/img_1.png)

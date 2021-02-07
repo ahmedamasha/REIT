@@ -30,18 +30,15 @@ depending on the status for every activity per the person (employee)
 
 *  **How to run the app** 
 
-if you are using IDE or terminal  
+1- clone the app `git clone git@github.com:ahmedamasha/REIT.git`
 
-FE (vuejs , yarn)
+**FE (vuejs , yarn)**
 
  - go to home of the project  `cd REIT/reit_web` then `yarn install` then `yarn run build`
 
 - back to `REIT/` As long as am using spring boot as BE so it has jetty embedded server , and configured ,
 
-you will notice
-<br><br>
-`2021-02-06 18:45:03.374  INFO 33843 --- [           main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 5500 (http/1.1) with context path '/'
-`
+
 <br><br>
 in console once you run using this CMD : `mvn spring-boot:run`   on jetty embedded  server
  <br>
@@ -50,6 +47,14 @@ After running the app ,  for BE , you will find all endpoints with docs here in 
 `http://localhost:5500/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#`
 
 <br>
+
+<hr>
+
+you will notice
+<br><br>
+`2021-02-06 18:45:03.374  INFO 33843 --- [           main] o.s.b.web.embedded.jetty.JettyWebServer  : Jetty started on port(s) 5500 (http/1.1) with context path '/'
+`
+
 <hr>
 
 **_Bonus_**

@@ -60,8 +60,7 @@ After running the app ,  for BE , you will find all endpoints with docs here in 
 * **Use Docker**
       
     - Using docker-compose file **Recommended in development**
-    - cd REIT , then run `mvn clean install`
-    - just run `docker-compose build` or directly then `docker-compose up`
+    - cd REIT , then run `mvn clean install` &  run `docker-compose build` or directly  `docker-compose up`
     - then the project exposed to 5500 port 
     - then hit `http://localhost:5500/#/home`
   <hr>

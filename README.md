@@ -47,7 +47,7 @@ but also give the ability for dev team to update and re-compile) using `yarn`
 
 Back to home `REIT/` As long as am using spring boot as BE so it has jetty embedded server , and configured ,
 
-via console once you run using this CMD : `mvn spring-boot:run`   on jetty embedded  server
+via console once you run using this CMD : `mvn clean install` then  `mvn spring-boot:run`   on jetty embedded  server
  <br>
 After running the app ,  for BE , you will find all endpoints with docs here in **swagger**
 

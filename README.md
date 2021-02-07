@@ -59,6 +59,8 @@ U will notice this ime in Console <br> `2021-02-06 18:45:03.374  INFO 33843 --- 
 `
 <hr>
 
+the app url and port  `http://localhost:5500/#/home`
+
 **_Bonus_**
 
 * **With Docker**
@@ -76,6 +78,8 @@ U will notice this ime in Console <br> `2021-02-06 18:45:03.374  INFO 33843 --- 
  
   then create `tests`  db manually 
   
+
+ At the end U will be able to hit `http://localhost:5500/#/home`
 <hr>
 - Using d3 library for visualization with charts in home page for activities per an employee that assigned to + some analytics and number refer to the progress.
 <hr>

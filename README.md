@@ -12,10 +12,11 @@ depending on the status for every activity per the person (employee)
 
 - Able to monitor the progress of the company activities per building
 - Able to monitor the progress of the building
-- Status entity for ading more status in the future with colors for better user interface
+- Status entity for adding more status in the future with colors for better user interface
+- Using docker-compose for fast productivity  
 - Good  UI/ UX design 
-- d3.js charts for monitor the activity per user 
-- Search bar to search by name in the projects grid view
+- d3.js charts for a monitor the activity per user 
+- Search bar to search by name in the projects' grid view
   <hr>
 
 *  **Tech stack** 
